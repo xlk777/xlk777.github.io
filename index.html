@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>湖南省植物园</title>
+    <script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/2.7.0/vue-router.min.js"></script>
+    <!-- <script src="js/vue.js"></script> -->
+    <!-- <script src="js/vue-router.js"></script> -->
+</head>
+
+<body>
+    <!-- 大盒子 -->
+    <div id="container">
+        <!-- 顶部 -->
+        <div id="top">
+            <!-- 顶部左侧 -->
+            <div id="top-left">
+                <img src="image/icon1.png">
+                <span class="top-text">你好！欢迎进入湖南省植物园官网</span>
+            </div>
+            <!-- 顶部右侧 -->
+            <div id="top-right">
+                <a href="#">加入收藏</a>
+                <a href="#" id="center_a">设为首页</a>
+                <a href="#">网站导航</a>
+            </div>
+        </div>
+        <!-- banner区 -->
+        <div id="banner">
+            <img src="image/banner.png">
+            <ul id="nav">
+                <li><a href="#" class="active">网站首页</a></li>
+                <li><a href="#">全园概况</a></li>
+                <li><a href="#">科学研究</a></li>
+                <li><a href="#">物种保护</a></li>
+                <li><a href="#">生态旅游</a></li>
+                <li><a href="#">科普教育</a></li>
+                <li><a href="#">开发利用</a></li>
+                <li><a href="#">对外交流</a></li>
+                <li><a href="#">数字植物园</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        <!-- 内容区域 -->
+        <div id="main">
+            <!-- 内容左侧 -->
+            <div id="main-left">
+                <img src="image/pic1.png">
+                <p class="img-text">盛世花博会，湖南园炫彩登场</p>
+            </div>
+            <!-- 内容右侧 -->
+            <div id="main-right">
+                <!-- 小导航栏 -->
+                <ul id="main-nav">
+                    <li><a href="#yndt" :class="yndt ?  'main-active' : ''">园内动态</a></li>
+                    <li><a href="#xxygg" :class="xxygg ?  'main-active' : ''">信息与公告</a></li>
+                </ul>
+                <!-- 内容 -->
+                <div id="content">
+                    <router-view></router-view>
+                </div>
+            </div>
+        </div>
+        <!-- 植物展示区域 -->
+        <div id="goods-container">
+            <!-- 标题 -->
+            <div id="title">
+                <img src="image/tushuo.png">
+            </div>
+            <!-- 植物图片 -->
+            <ul id="goods-list">
+                <li><img src="image/yinghua.png">
+                    <p class="goods-active">樱花园</p>
+                </li>
+                <li><img src="image/dujuan.png">
+                    <p>国家杜鹃园</p>
+                </li>
+                <li><img src="image/mulan.png">
+                    <p>木兰花</p>
+                </li>
+                <li><img src="image/cahua.jpg">
+                    <p>茶花园</p>
+                </li>
+                <li><img src="image/zuzi.jpg">
+                    <p>观赏竹园</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 底部 -->
+        <div id="footer">
+            <!-- 底部左侧 -->
+            <div id="footer-left">
+                <img src="image/gzh.jpg">
+                <p>公众号</p>
+            </div>
+            <!-- 底部右侧 -->
+            <div id="footer-right">
+                <p>湖南省植物园 版权所有 备案号： 湘ICP备18003953号-1</p>
+                <p>地址：湖南省长沙市雨花区洞井镇省植物园 邮编：410000 营业执照查阅 技术支持：竞网智赢 站长统计</p>
+                <p>电话： 0731-85052295(党政办) 85056369(旅游中心) 85049301(门票中心) 85592547(安保处) 传真：0731-85052295</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 园内动态
+        const yndt = {
+            template: `<div><p>⊙ 我园科研人员参加森林火灾风险普查培训班[07-27]</p>
+                    <p>⊙ 我园纪检干部参加省林业局 纪检监察新闻和信息培训[07-26]</p>
+                    <p>⊙ 第三、四、七支部联合开展2021年支部党建活动[07-20]</p>
+                    <p>⊙ 我园第五党支部开展“学史力行”主题党日活动[07-19]</p>
+                    <p>⊙ “半条被子”寄民心[07-19]</p>
+                    <p>⊙ 我园派员参加CFERN＆TECHNO 第八届学术年会暨优秀学术成果奖励大会[07-19]</p>
+                    <p>⊙ 我园科研人员参加2021年林草科技人才科研能力提升培训班[07-16]</p>
+                    <p>⊙ 第一、第二党支部联合开展“赴芷江寻足迹、践初心”主题党日活动[07-16]</p></div>` }
+        // 信息与公告
+        const xxygg = {
+            template: `<div><p>⊙ 2021年湖南省森林植物园预算[03-24]</p>
+                    <p>⊙ 湖南省野生动物救护繁殖中心 穿山甲饲养场改建工程项目的招标公告[12-03]</p>
+                    <p>⊙ 长株潭地区生态监测平台设备采购项目招标公告[11-30]</p>
+                    <p>⊙ 湖南省森林植物园无人机采购招标公告[09-21]</p>
+                    <p>⊙ 湖南省森林植物园观光车停车棚建设工程项目招标公告[09-08]</p>
+                    <p>⊙ 湖南湿地示范园动力设备配套供电系统工程招标公告[07-23]</p>
+                    <p>⊙ 植物园蝴蝶谷冷雾景观建设工程项目招标公告[07-21]</p>
+                    <p>⊙ 西门、北门游客服务中心提质改造工程 监理单位中标候选人公示[06-01]</p></div>` }
+        const routes = [
+            { path: '/', redirect: '/yndt' },
+            { path: '/yndt', component: yndt },
+            { path: '/xxygg', component: xxygg }
+        ]
+        const router = new VueRouter({
+            routes
+        })
+        const app = new Vue({
+            router,
+            computed: {
+                yndt () {
+                    return this.$route.path === '/yndt'
+                },
+                xxygg () {
+                    return this.$route.path === '/xxygg'
+                }
+            }
+        }).$mount('#container')
+        // 路由前置守卫
+        router.beforeEach((to, from, next) => {
+            if (to.matched.length === 0) {
+                next('/yndt')//单路由不匹配时跳转到园内动态
+            } else {
+                next()
+            }
+        })
+    </script>
+</body>
+
+</html>
